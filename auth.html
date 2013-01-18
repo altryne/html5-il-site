@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+    hash = window.location.hash.substr(1);
+    if(hash.split('access_token').length){
+        console.log('success!');
+		window.opener.auth(hash);
+    }
+</script>
+</body>
+</html>

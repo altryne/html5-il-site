@@ -1,0 +1,21 @@
+<h2>Welcome {{user.first_name}}!</h2>
+
+<h4>Here are your latest meetups in html5-il</h4>
+
+<table class="table table-striped">
+	<thead>
+	<tr>
+		<td>Title</td>
+		<td>Date</td>
+		<td>RSVP</td>
+	</tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="meetup in events" id="{{meetup.id}}">
+		<td>{{meetup.name}}</td>
+		<td>{{meetup.time | date : 'MMM d, yyyy' }}</td>
+		<td>{{meetup.self.rsvp.response || 'na'}}</td>
+		<td ng-show="(meetup.self.rsvp.response == 'yes')"><a class="btn btn-primary" href="#" ng-click="popup()">Leave feeback</a></td>
+	</tr>
+	</tbody>
+</table>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Welcome to HTML5-IL </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/lib/bootstrap-2.1.1/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="/lib/bootstrap-2.1.1/css/bootstrap-responsive.css"/>
+    <!-- When you load angular at the bottom, you need to create the "ng-cloak" rules yourself -->
+    <style type="text/css">
+        @charset "UTF-8";
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none;
+        }
+
+        ng\:form {
+            display: block;
+        }
+		.login_block{
+
+		}
+		.photo{
+			width:40px;
+			height:40px;
+			background-size: cover;
+			border-radius: 3px;
+			float:left;
+		}
+		.name{
+			display: inline-block;
+			float:left;
+		}
+		.login_block a{
+			float:left;
+		}
+		.ss-q-help,.ss-form-desc{
+			color:grey;
+			font-size: 14px;
+		}
+		.ss-q-title{
+			line-height: 30px;
+			color:#e36b23;
+			margin: 5px 0;
+			font-family: 'Oswald',sans-serif;
+			font-weight: bold;
+			font-size: 20px;
+			text-shadow: -2px 2px 0 #612c0c;
+		}
+    </style>
+</head>
+<body>
+
+
+<div ng-app="html5il" ng-controller="AppCtrl"  id="main" class="container ng-cloak">
+	<div class="clearfix">
+		<div class="page-header">
+		  <h1><a href="/welcome">Welcome to HTML5-IL</a></h1>
+		</div>
+
+		<!--<div class="login_block well" ng-show="user">-->
+			<!--<div class="photo" style="background-image:url({{user.photo.thumb_link}})"></div>-->
+			<!--<div class="name">{{user.name}}</div>-->
+			<!--<a>(logout)</a>-->
+		<!--</div>-->
+
+	</div>
+	<div class="well well-large">
+		<ng-view></ng-view>
+	</div>
+</div>
+
+
+<script type="text/javascript" src="/lib/jquery-2.0.0b1.js"></script>
+<script type="text/javascript" src="/lib/angular-1.0.3/angular.js"></script>
+<script type="text/javascript" src="/lib/angular-1.0.3/angular-resource.js"></script>
+<script type="text/javascript" src="/js/meetupAPIService.js"></script>
+<script type="text/javascript" src="/lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="/lib/jquery.parseparam.js"></script>
+<script type="text/javascript" src="/lib/underscore-min.js"></script>
+<script src="/js/html5il.js"></script>
+
+</body>
+</html>

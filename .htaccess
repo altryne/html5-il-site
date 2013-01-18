@@ -1,0 +1,20 @@
+#<ifModule mod_rewrite.c>
+#    RewriteEngine On
+#    RewriteBase /
+#    RewriteCond %{REQUEST_FILENAME} !-f
+#    RewriteCond %{REQUEST_FILENAME} !-d
+#    RewriteCond %{REQUEST_URI} !index
+#    RewriteRule (.*) index.html [L]
+#</ifModule>
+
+<ifModule mod_rewrite.c>
+    RewriteEngine On
+#    RewriteBase /
+#    DirectorySlash Off
+    RewriteCond %{REQUEST_FILENAME} !\.(js|css|html|php)$
+    RewriteCond %{REQUEST_URI} !^index
+    RewriteRule (.*) index.html [L]
+
+#    RewriteCond %{REQUEST_FILENAME} \.(js|css|html|php)$
+#    RewriteRule (.*) %{REQUEST_URI}/$1 [L]
+</ifModule>
