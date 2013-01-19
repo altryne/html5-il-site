@@ -7,10 +7,8 @@ angular.module('meetupAPIService',['ngResource']).
 			{
 				action : 'members',
 				member_id:'self',
-				callback : 'JSON_CALLBACK',
 				access_token :$.cookie('auth')
-			},
-			{get:{method : 'JSONP',isArray: false}}
+			}
 		)
 
 		meetupAPIResource.prototype.getData = function(action,data,callback,cacheble){

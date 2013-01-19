@@ -1,8 +1,15 @@
 var app = angular.module('html5il',['ngResource','meetupAPIService']);
 
+if(location.host == 'html5il.com'){
+	app.constant('API_CONFIG',{key : '2vhfkjrdi9e2lashik72u7m54h','redir_url':'http://html5il.com'})
+}else{
+	app.constant('API_CONFIG',{key : 'hc9et1ihd9ec8eo843oqh11trc','redir_url':'http://html5il.org'})
+}
+
 app.config(function($routeProvider,$locationProvider){
-	$locationProvider.html5Mode(true);
+//	$locationProvider.html5Mode(true);
 	$routeProvider.
+		when('',{redirectTo : 'login'}).
 		when("/login",{templateUrl :"/partials/login.html",controller : 'LoginCtrl'}).
 		when("/welcome",{
 			templateUrl :"/partials/welcome.html",
@@ -14,9 +21,9 @@ app.config(function($routeProvider,$locationProvider){
 
 var token;
 var env_settings = (window.location.host == 'html5il.com')?
-		{key : '2vhfkjrdi9e2lashik72u7m54h','redir_url':'http://html5il.com/auth.html'}
+		{key : '2vhfkjrdi9e2lashik72u7m54h','redir_url':'http://html5il.com'}
 		:
-		{key : 'hc9et1ihd9ec8eo843oqh11trc','redir_url':'http://html5il.org/auth.html'};
+		{key : 'hc9et1ihd9ec8eo843oqh11trc','redir_url':'http://html5il.org'};
 
 var AppCtrl = function ($scope,$location) {
 	$scope.authStatus = false;
@@ -26,16 +33,20 @@ var AppCtrl = function ($scope,$location) {
 	}
 	$scope.checkAuthWithLocation();
 }
-var LoginCtrl = function ($scope) {
+var LoginCtrl = function ($scope,API_CONFIG) {
 	$scope.authorize = function(){
 			var auth_url = 'https://secure.meetup.com/oauth2/authorize'+
-					   '?client_id=' +env_settings.key +
+					   '?client_id=' +API_CONFIG.key +
 					   '&response_type=token'+
-					   '&redirect_uri='+env_settings.redir_url;
+					   '&redirect_uri='+API_CONFIG.redir_url;
 					win = new_win(auth_url,'auth_window',400,380);
 		}
 }
 var WelcomeCtrl = function ($scope,$rootScope,meetupAPIResource,$location) {
+	$scope.enum = {
+		'wait' : 'Join the waiting list!',
+		'rsvp' : 'Attend this event!'
+	}
 	//get user details
 	meetupAPIResource.getData('members',{},function(result){
 		$rootScope.user = result[0];
@@ -45,11 +56,18 @@ var WelcomeCtrl = function ($scope,$rootScope,meetupAPIResource,$location) {
 	//check if user in group
 	meetupAPIResource.getData('profiles',{"group_id":"6218572"}, function(result){
 		if(result.length == 0){
-			$location.path('/join_the_group');
+			$location.path('join_the_group');
 		}
 	},true);
+//	"group_id":"6218572",
+	meetupAPIResource.getData('events',{"status":"upcoming","page":"2","order":"time","desc":"false","fields":"self"}, function(result){
 
-	meetupAPIResource.getData('events',{"group_id":"6218572","page":"20","order":"time","desc":"true","fields":"self"}, function(result){
+		//filter the actions to the only we want, 'rsvp' and 'wait'
+		_.each(result,function(obj){obj.self.actions = _.intersection(obj.self.actions,['rsvp','wait'])})
+		$scope.future_events = result;
+	},true);
+
+	meetupAPIResource.getData('events',{"status":"past","rsvp":"yes","page":"5","order":"time","desc":"true","fields":"self"}, function(result){
 		console.log(result);
 		$scope.events = result;
 	},true);
@@ -59,25 +77,58 @@ var WelcomeCtrl = function ($scope,$rootScope,meetupAPIResource,$location) {
 		win = new_win(url,'feedback_window',768,900);
 	}
 
+	$scope.sendAction = function(button,meetup_id){
+		var post_obj = {"action":"rsvp",
+						"access_token":$.cookie('auth'),
+						"event_id":meetup_id,
+						};
+				meetupAPIResource.$get(post_obj,function(result){
+					console.log(result);
+				},function(result,$location){
+					console.log('was an error!',result);
+					var answer  = confirm('There was an API error! \n\n\n Click \'OK\' to complete the action on meetup.com');
+					if(answer){
+						window.location = 'http://www.meetup.com/HTML5-IL/events/99494632/';
+					}
+				})
+	}
+
 }
 
-var JoinCtrl = function ($scope, $http, meetupAPIResource) {
-//	$http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+var JoinCtrl = function ($scope, $http, meetupAPIResource,$location) {
 	$scope.group_urlname = 'HTML5-IL';
 	$scope.group_id = '6218572';
-
+	$scope.$location = $location;
 	$scope.join = function($event){
 		$event.preventDefault();
-		meetupAPIResource.$save({"access_token":$.cookie('auth'),"group_id":$scope.group_id,"group_urlname":$scope.group_urlname},function(result){
-			console.log(result);
-		},function(){
-			console.log('was an error!');
+
+		var post_obj = {"action":"profile",
+						"access_token":$.cookie('auth'),
+						"group_id":$scope.group_id,
+						"group_urlname":$scope.group_urlname,
+						"intro":"joined through the html5il.com site"};
+		meetupAPIResource.$get(post_obj,function(result){
+			if(result.status == 'active'){
+				alert('congrats! you\'ve successfully joined our group!!');
+				$scope.redirect('welcome');
+			}
+		},function(result,$location){
+			console.log('was an error!',result);
+			if(result.member_exists){
+				$scope.redirect('welcome');
+			}else{
+				var answer  = confirm('There was an API error! \n\n\n Click \'OK\' to complete the action on meetup.com');
+				if(answer){
+					location = 'http://www.meetup.com/HTML5-IL/join/';
+				}
+			}
 			//no "post" allowed, redirect user to meetup.com
 //			window.open('http://meetup.com/HTML5-IL','_blank');
-			window.location = 'http://meetup.com/HTML5-IL';
+//			window.location = 'http://meetup.com/HTML5-IL';
 		})
 		return false;
 	}
+	$scope.redirect = function(path){$location.path(path)}
 }
 
 var FeedbackCtrl = function ($scope, meetupAPIResource) {
@@ -90,9 +141,9 @@ var checkAuthorizedMode = function($location){
 	var cookie = $.cookie('auth');
 	if(cookie != null){
 		console.log('cookies exists');
-		$location.path('/welcome');
+		$location.path('welcome');
 	}else{
-		$location.path('/login');
+		$location.path('login');
 		console.log('cookies no!');
 	}
 }

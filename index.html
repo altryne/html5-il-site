@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Welcome to HTML5-IL </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>if(opener && (h = location.hash.substr(1))){opener.auth(h);}</script>
     <link rel="stylesheet" href="/lib/bootstrap-2.1.1/css/bootstrap-theme.min.css"/>
     <link rel="stylesheet" href="/lib/bootstrap-2.1.1/css/bootstrap-responsive.css"/>
     <!-- When you load angular at the bottom, you need to create the "ng-cloak" rules yourself -->
@@ -46,6 +47,16 @@
 			font-size: 20px;
 			text-shadow: -2px 2px 0 #612c0c;
 		}
+		.full_desc{
+			position: relative;
+		}
+		.full_desc:hover + .hide{
+			display: block;
+			position: absolute;
+			left:0;
+			top:15px;
+			box-shadow:0 0 15px rgba(0,0,0,0.5);
+		}
     </style>
 </head>
 <body>
@@ -54,7 +65,7 @@
 <div ng-app="html5il" ng-controller="AppCtrl"  id="main" class="container ng-cloak">
 	<div class="clearfix">
 		<div class="page-header">
-		  <h1><a href="/welcome">Welcome to HTML5-IL</a></h1>
+		  <h1><a href="#welcome">Welcome to HTML5-IL</a></h1>
 		</div>
 
 		<!--<div class="login_block well" ng-show="user">-->
@@ -77,7 +88,6 @@
 <script type="text/javascript" src="/lib/jquery.cookie.js"></script>
 <script type="text/javascript" src="/lib/jquery.parseparam.js"></script>
 <script type="text/javascript" src="/lib/underscore-min.js"></script>
-<script src="/js/html5il.js"></script>
-
+<script src="js/html5il.js"></script>
 </body>
 </html>
