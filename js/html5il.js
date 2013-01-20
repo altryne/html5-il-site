@@ -1,9 +1,9 @@
 var app = angular.module('html5il',['ngResource','meetupAPIService']);
 
 if(location.host == 'html5il.com'){
-	app.constant('API_CONFIG',{key : '2vhfkjrdi9e2lashik72u7m54h','redir_url':'http://html5il.com'})
+	app.constant('APP_CONFIG',{production : true, key : '2vhfkjrdi9e2lashik72u7m54h','redir_url':'http://html5il.com'})
 }else{
-	app.constant('API_CONFIG',{key : 'hc9et1ihd9ec8eo843oqh11trc','redir_url':'http://html5il.org'})
+	app.constant('APP_CONFIG',{production: false, key : 'hc9et1ihd9ec8eo843oqh11trc','redir_url':'http://html5il.org'})
 }
 
 app.config(function($routeProvider,$locationProvider){
@@ -33,16 +33,16 @@ var AppCtrl = function ($scope,$location) {
 	}
 	$scope.checkAuthWithLocation();
 }
-var LoginCtrl = function ($scope,API_CONFIG) {
+var LoginCtrl = function ($scope,APP_CONFIG) {
 	$scope.authorize = function(){
 			var auth_url = 'https://secure.meetup.com/oauth2/authorize'+
-					   '?client_id=' +API_CONFIG.key +
+					   '?client_id=' +APP_CONFIG.key +
 					   '&response_type=token'+
-					   '&redirect_uri='+API_CONFIG.redir_url;
+					   '&redirect_uri='+APP_CONFIG.redir_url;
 					win = new_win(auth_url,'auth_window',400,380);
 		}
 }
-var WelcomeCtrl = function ($scope,$rootScope,meetupAPIResource,$location) {
+var WelcomeCtrl = function ($scope,$rootScope,meetupAPIResource,$location,APP_CONFIG) {
 	$scope.enum = {
 		'wait' : 'Join the waiting list!',
 		'rsvp' : 'Attend this event!'
@@ -59,15 +59,27 @@ var WelcomeCtrl = function ($scope,$rootScope,meetupAPIResource,$location) {
 			$location.path('join_the_group');
 		}
 	},true);
-//	"group_id":"6218572",
-	meetupAPIResource.getData('events',{"status":"upcoming","page":"2","order":"time","desc":"false","fields":"self"}, function(result){
 
+	var events_obj = {
+		"group_id":"6218572",
+		"status":"upcoming",
+		"page":"2",
+		"order":"time",
+		"desc":"false",
+		"fields":"self"
+	}
+
+	if(!APP_CONFIG.production){
+		delete events_obj.group_id;
+	}
+	meetupAPIResource.getData('events',events_obj, function(result){
 		//filter the actions to the only we want, 'rsvp' and 'wait'
 		_.each(result,function(obj){obj.self.actions = _.intersection(obj.self.actions,['rsvp','wait'])})
 		$scope.future_events = result;
 	},true);
 
-	meetupAPIResource.getData('events',{"status":"past","rsvp":"yes","page":"5","order":"time","desc":"true","fields":"self"}, function(result){
+	var future_events_obj = $.extend(events_obj,{"status":"past","rsvp":"yes","page":"5","desc":"true"});
+	meetupAPIResource.getData('events',future_events_obj, function(result){
 		console.log(result);
 		$scope.events = result;
 	},true);
