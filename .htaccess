@@ -11,7 +11,7 @@
     RewriteEngine On
 #    RewriteBase /
 #    DirectorySlash Off
-    RewriteCond %{REQUEST_FILENAME} !\.(js|css|html|php)$
+    RewriteCond %{REQUEST_FILENAME} !\.(js|css|html|php|png)$
     RewriteCond %{REQUEST_URI} !^index
     RewriteRule (.*) index.html [L]
 

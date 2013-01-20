@@ -47,6 +47,7 @@ var WelcomeCtrl = function ($scope,$rootScope,meetupAPIResource,$location,APP_CO
 		'wait' : 'Join the waiting list!',
 		'rsvp' : 'Attend this event!'
 	}
+
 	//get user details
 	meetupAPIResource.getData('members',{},function(result){
 		$rootScope.user = result[0];
@@ -105,6 +106,20 @@ var WelcomeCtrl = function ($scope,$rootScope,meetupAPIResource,$location,APP_CO
 				})
 	}
 
+
+	$scope.long_desc = false;
+	$scope.showLongDesc = function(description){
+		$scope.long_desc = true;
+		$('#anim').addClass('fadeInLeftBig');
+		$('#anim .cont').html(description);
+		$('#anim .btn').on('click',function(){
+			$('#anim').addClass('fadeOutRightBig');
+			window.setTimeout(function(){
+				$('#anim').removeClass('fadeInLeftBig fadeOutRightBig');
+				$('#anim .cont').html('');
+			},1100)
+		})
+	}
 }
 
 var JoinCtrl = function ($scope, $http, meetupAPIResource,$location) {

@@ -1,47 +1,59 @@
-<h2>Welcome {{user.first_name}}!</h2>
+<div class="welcome_cont">
+	<h2>Welcome {{user.first_name}}!</h2>
 
-<div ng-show="future_events.length">
-	<h3>Here the upcoming events in the group</h3>
-	<table class="table table-striped">
-		<thead>
-		<tr>
-			<td>Title</td>
-			<td>Date</td>
-			<td>RSVP</td>
-		</tr>
-		</thead>
-		<tbody>
-		<!--<span class="small">(<a class="full_desc">full desc.<div class="full_description hide well" ng-bind-html-unsafe="meetup.description"></div></a>)</span>-->
-		<tr ng-repeat="meetup in future_events">
-			<td>{{meetup.name}}</td>
-			<td>{{meetup.time | date : 'MMM d, yyyy' }}</td>
-			<td ng-show="meetup.self.rsvp.response">{{meetup.self.rsvp.response}}</td>
-			<td ng-show="!meetup.self.rsvp.response">
-				<button ng-repeat="button in meetup.self.actions" ng-click="sendAction(button,meetup.id)">{{enum[button]}}</button>
-			</td>
-		</tr>
-		</tbody>
-	</table>
-</div>
+	<div ng-show="future_events.length">
+		<h3>Here the upcoming events in the group</h3>
+		<table class="table table-striped">
+			<thead>
+			<tr>
+				<td>Title</td>
+				<td>Date</td>
+				<td>RSVP</td>
+			</tr>
+			</thead>
+			<tbody>
+			<!--<span class="small">(<a class="full_desc">full desc.<div class="full_description hide well" ng-bind-html-unsafe="meetup.description"></div></a>)</span>-->
+			<tr ng-repeat="meetup in future_events">
+				<td>{{meetup.name}}
+					<span class="small"><a class="full_desc" ng-click="showLongDesc(meetup.description)">full
+						desc</a></span>
+				</td>
+				<td>{{meetup.time | date : 'MMM d, yyyy' }}</td>
+				<td ng-show="meetup.self.rsvp.response">{{meetup.self.rsvp.response}}</td>
+				<td ng-show="!meetup.self.rsvp.response">
+					<button ng-repeat="button in meetup.self.actions" ng-click="sendAction(button,meetup.id)">
+						{{enum[button]}}
+					</button>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
 
-<div ng-show="events.length">
-	<h3>{{user.first_name}}, youre latest {{events.length}} attended meetups, please leave feedback.</h3>
+	<div ng-show="events.length">
+		<h3>{{user.first_name}}, youre latest {{events.length}} attended meetups, please leave feedback.</h3>
 
-	<table class="table table-striped">
-		<thead>
-		<tr>
-			<td>Title</td>
-			<td>Date</td>
-			<td>Feedback</td>
-		</tr>
-		</thead>
-		<tbody>
-		<tr ng-repeat="meetup in events" id="{{meetup.id}}">
-			<td>{{meetup.name}}</td>
-			<td>{{meetup.time | date : 'MMM d, yyyy' }}</td>
-			<td ng-show="(meetup.self.rsvp.response == 'yes')"><a class="btn btn-primary" ng-click="popup()">Leave
-				feeback</a></td>
-		</tr>
-		</tbody>
-	</table>
+		<table class="table table-striped">
+			<thead>
+			<tr>
+				<td>Title</td>
+				<td>Date</td>
+				<td>Feedback</td>
+			</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="meetup in events" id="{{meetup.id}}">
+				<td>{{meetup.name}}</td>
+				<td>{{meetup.time | date : 'MMM d, yyyy' }}</td>
+				<td ng-show="(meetup.self.rsvp.response == 'yes')"><a class="btn btn-primary" ng-click="popup()">Leave
+					feeback</a></td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="well animated" id="anim">
+		<div class="btn btn-mini"><i class="icon-remove"></i></div>
+		<div class="cont"></div>
+	</div>
 </div>
