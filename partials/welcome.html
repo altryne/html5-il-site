@@ -15,12 +15,12 @@
 			<!--<span class="small">(<a class="full_desc">full desc.<div class="full_description hide well" ng-bind-html-unsafe="meetup.description"></div></a>)</span>-->
 			<tr ng-repeat="meetup in future_events">
 				<td>{{meetup.name}}
-					<span class="small"><a class="full_desc" ng-click="showLongDesc(meetup.description)">full
-						desc</a></span>
+					<span class="small">(<a class="full_desc" ng-click="showLongDesc(meetup.description)">full
+						desc</a>)</span>
 				</td>
 				<td>{{meetup.time | date : 'MMM d, yyyy' }}</td>
-				<td ng-show="meetup.self.rsvp.response">{{meetup.self.rsvp.response}}</td>
-				<td ng-show="!meetup.self.rsvp.response">
+				<td ng-show="meetup.self.rsvp.response && meetup.self.rsvp.response != 'no'">{{meetup.self.rsvp.response}}</td>
+				<td ng-show="!meetup.self.rsvp.response || meetup.self.rsvp.response == 'no'">
 					<button ng-repeat="button in meetup.self.actions" ng-click="sendAction(button,meetup.id)">
 						{{enum[button]}}
 					</button>
@@ -43,7 +43,8 @@
 			</thead>
 			<tbody>
 			<tr ng-repeat="meetup in events" id="{{meetup.id}}">
-				<td>{{meetup.name}}</td>
+				<td>{{meetup.name}} <span class="small">(<a class="full_desc" ng-click="showLongDesc(meetup.description)">full
+										desc</a>)</span></td>
 				<td>{{meetup.time | date : 'MMM d, yyyy' }}</td>
 				<td ng-show="(meetup.self.rsvp.response == 'yes')"><a class="btn btn-primary" ng-click="popup()">Leave
 					feeback</a></td>

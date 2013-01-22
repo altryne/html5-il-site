@@ -9,15 +9,16 @@ if(location.host == 'html5il.com'){
 app.config(function($routeProvider,$locationProvider){
 //	$locationProvider.html5Mode(true);
 	$routeProvider.
-		when('',{redirectTo : 'login'}).
 		when("/login",{templateUrl :"/partials/login.html",controller : 'LoginCtrl'}).
 		when("/welcome",{
 			templateUrl :"/partials/welcome.html",
 			controller : 'WelcomeCtrl'
 			}).
 		when('/join_the_group',{templateUrl:"/partials/join.html",controller:"JoinCtrl"}).
-		when('/feedback/:first_name',{templateUrl:"/partials/feedback.html",controller : 'FeedbackCtrl'});
+		when('/feedback/:first_name',{templateUrl:"/partials/feedback.html",controller : 'FeedbackCtrl'}).
+		otherwise('',{redirectTo : '/login'})
 })
+
 
 var token;
 var env_settings = (window.location.host == 'html5il.com')?
@@ -42,7 +43,7 @@ var LoginCtrl = function ($scope,APP_CONFIG) {
 					win = new_win(auth_url,'auth_window',400,380);
 		}
 }
-var WelcomeCtrl = function ($scope,$rootScope,meetupAPIResource,$location,APP_CONFIG) {
+var WelcomeCtrl = function ($scope,$rootScope,meetupAPIResource,$location,APP_CONFIG,$http) {
 	$scope.enum = {
 		'wait' : 'Join the waiting list!',
 		'rsvp' : 'Attend this event!'
@@ -59,7 +60,7 @@ var WelcomeCtrl = function ($scope,$rootScope,meetupAPIResource,$location,APP_CO
 		if(result.length == 0){
 			$location.path('join_the_group');
 		}
-	},true);
+	},false);
 
 	var events_obj = {
 		"group_id":"6218572",
@@ -67,7 +68,7 @@ var WelcomeCtrl = function ($scope,$rootScope,meetupAPIResource,$location,APP_CO
 		"page":"2",
 		"order":"time",
 		"desc":"false",
-		"fields":"self"
+		"fields":"self,survey_questions"
 	}
 
 	if(!APP_CONFIG.production){
@@ -91,12 +92,25 @@ var WelcomeCtrl = function ($scope,$rootScope,meetupAPIResource,$location,APP_CO
 	}
 
 	$scope.sendAction = function(button,meetup_id){
-		var post_obj = {"action":"rsvp",
+		var actions = {
+			"rsvp" : 'yes',
+			"wait" : "waitlist"
+		}
+		var post_obj = {
+						"action" : "rsvp",
+						"rsvp":actions[button],
 						"access_token":$.cookie('auth'),
 						"event_id":meetup_id,
 						};
-				meetupAPIResource.$get(post_obj,function(result){
-					console.log(result);
+				meetupAPIResource.$save(post_obj,function(result){
+					console.log('joined succesfully!!',result);
+					if(result.rsvp_id){
+						var event = _.where($scope.future_events, {id:result.event.id});
+						event[0].self.rsvp = {
+							"response" : result.response
+						}
+//						$scope.$apply();
+					}
 				},function(result,$location){
 					console.log('was an error!',result);
 					var answer  = confirm('There was an API error! \n\n\n Click \'OK\' to complete the action on meetup.com');
@@ -130,11 +144,10 @@ var JoinCtrl = function ($scope, $http, meetupAPIResource,$location) {
 		$event.preventDefault();
 
 		var post_obj = {"action":"profile",
-						"access_token":$.cookie('auth'),
 						"group_id":$scope.group_id,
 						"group_urlname":$scope.group_urlname,
 						"intro":"joined through the html5il.com site"};
-		meetupAPIResource.$get(post_obj,function(result){
+		meetupAPIResource.$save(post_obj,function(result){
 			if(result.status == 'active'){
 				alert('congrats! you\'ve successfully joined our group!!');
 				$scope.redirect('welcome');
@@ -155,7 +168,9 @@ var JoinCtrl = function ($scope, $http, meetupAPIResource,$location) {
 		})
 		return false;
 	}
-	$scope.redirect = function(path){$location.path(path)}
+	$scope.redirect = function(path){
+		$location.path(path)
+	}
 }
 
 var FeedbackCtrl = function ($scope, meetupAPIResource) {

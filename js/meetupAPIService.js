@@ -5,8 +5,6 @@ angular.module('meetupAPIService',['ngResource']).
 		var token = $.cookie('auth');
 		var meetupAPIResource = $resource(url + ':action',
 			{
-				action : 'members',
-				member_id:'self',
 				access_token :$.cookie('auth')
 			}
 		)
@@ -15,7 +13,7 @@ angular.module('meetupAPIService',['ngResource']).
 			if(cacheble && cache[action + JSON.stringify(data)]){
 				callback(cache[action + JSON.stringify(data)]);
 			}else {
-				return meetupAPIResource.get($.extend({'action':action}, data), function (result) {
+				return meetupAPIResource.get($.extend({'action':action,'member_id':'self'}, data), function (result) {
 					if (result.problem) {
 						console.log('there was an authentication error, reseting');
 						if ($location.path() != '/login') {
