@@ -182,6 +182,7 @@ var FeedbackCtrl = function ($scope, meetupAPIResource) {
 		$scope.user = result[0];
 		$scope.user.first_name = $scope.user.name.split(' ')[0];
 		mixpanel.identify($scope.user.id);
+		mixpanel.name_tag($scope.user.name);
 	},true);
 };
 var checkAuthorizedMode = function($location){
