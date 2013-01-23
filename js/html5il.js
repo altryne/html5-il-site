@@ -28,7 +28,7 @@ var env_settings = (window.location.host == 'html5il.com')?
 
 var AppCtrl = function ($scope,$location) {
 	$scope.authStatus = false;
-
+	mixpanel.track('Landing page');
 	$scope.checkAuthWithLocation = function(){
 		checkAuthorizedMode($location);
 	}
@@ -36,6 +36,7 @@ var AppCtrl = function ($scope,$location) {
 }
 var LoginCtrl = function ($scope,APP_CONFIG) {
 	$scope.authorize = function(){
+		mixpanel.track('Authorize button click');
 			var auth_url = 'https://secure.meetup.com/oauth2/authorize'+
 					   '?client_id=' +APP_CONFIG.key +
 					   '&response_type=token'+
@@ -87,6 +88,7 @@ var WelcomeCtrl = function ($scope,$rootScope,meetupAPIResource,$location,APP_CO
 	},true);
 
 	$scope.popup = function(){
+		mixpanel.track('Feedback button click');
 		var url = 'https://docs.google.com/spreadsheet/embeddedform?formkey=dHU2SzRvS2dGZW1pdEdmcGktVWRNdFE6MQ&field_0='+$rootScope.user.first_name;
 		win = new_win(url,'feedback_window',768,900);
 	}
@@ -102,6 +104,7 @@ var WelcomeCtrl = function ($scope,$rootScope,meetupAPIResource,$location,APP_CO
 						"access_token":$.cookie('auth'),
 						"event_id":meetup_id,
 						};
+		mixpanel.track('Event action button click',post_obj);
 				meetupAPIResource.$save(post_obj,function(result){
 					console.log('joined succesfully!!',result);
 					if(result.rsvp_id){
@@ -141,6 +144,7 @@ var JoinCtrl = function ($scope, $http, meetupAPIResource,$location) {
 	$scope.group_id = '6218572';
 	$scope.$location = $location;
 	$scope.join = function($event){
+		mixpanel.track('Join button click');
 		$event.preventDefault();
 
 		var post_obj = {"action":"profile",
@@ -177,6 +181,7 @@ var FeedbackCtrl = function ($scope, meetupAPIResource) {
 	meetupAPIResource.getData('members',{},function(result){
 		$scope.user = result[0];
 		$scope.user.first_name = $scope.user.name.split(' ')[0];
+		mixpanel.identify($scope.user.id);
 	},true);
 };
 var checkAuthorizedMode = function($location){
