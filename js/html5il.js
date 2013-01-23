@@ -4,6 +4,17 @@ if(location.host == 'html5il.com'){
 	app.constant('APP_CONFIG',{production : true, key : '2vhfkjrdi9e2lashik72u7m54h','redir_url':'http://html5il.com'})
 }else{
 	app.constant('APP_CONFIG',{production: false, key : 'hc9et1ihd9ec8eo843oqh11trc','redir_url':'http://html5il.org'})
+	mixpanel = {
+		track : function(name, obj){
+			console.log('mixpanel local event',name, obj);
+		},
+		identify : function(name, obj){
+			console.log('mixpanel local event',name, obj);
+		},
+		name_tag : function(name){
+			console.log('mixpanel local event',name, obj);
+		}
+	}
 }
 
 app.config(function($routeProvider,$locationProvider){
