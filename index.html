@@ -5,9 +5,10 @@
     <title>Welcome to HTML5-IL </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>if(opener && (h = location.hash.substr(1))){opener.auth(h);}</script>
-    <link rel="stylesheet" href="/lib/bootstrap-2.1.1/css/bootstrap-theme.min.css"/>
-    <link rel="stylesheet" href="/lib/bootstrap-2.1.1/css/bootstrap-responsive.css"/>
+    <link rel="stylesheet" href="lib/bootstrap-2.1.1/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="lib/bootstrap-2.1.1/css/bootstrap-responsive.css"/>
     <link rel="stylesheet" href="animate-custom.css"/>
+    <link rel="stylesheet" href="css/html5il.css"/>
     <!-- When you load angular at the bottom, you need to create the "ng-cloak" rules yourself -->
     <style type="text/css">
         @charset "UTF-8";
@@ -62,10 +63,6 @@
 			text-align: center;
 		}
     </style>
-	<!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
-	typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,
-	e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
-	mixpanel.init("5f92307092a1710b6f501b21ed870a29");</script><!-- end Mixpanel -->
 </head>
 <body>
 
@@ -89,16 +86,18 @@
 </div>
 
 <div class="center">
-	<a href="http://mixpanel.com/f/partner"><img src="http://mixpanel.com/site_media/images/partner/badge_light.png" alt="Real Time Web Analytics"/></a>
+
 </div>
 
-<script type="text/javascript" src="/lib/jquery-2.0.0b1.js"></script>
-<script type="text/javascript" src="/lib/angular-1.0.3/angular.js"></script>
-<script type="text/javascript" src="/lib/angular-1.0.3/angular-resource.js"></script>
-<script type="text/javascript" src="/js/meetupAPIService.js"></script>
-<script type="text/javascript" src="/lib/jquery.cookie.js"></script>
-<script type="text/javascript" src="/lib/jquery.parseparam.js"></script>
-<script type="text/javascript" src="/lib/underscore-min.js"></script>
+<script src="lib/jquery-2.0.0b1.js"></script>
+<script src="lib/angular-1.0.3/angular.js"></script>
+<script src="lib/angular-1.0.3/angular-resource.js"></script>
+<script src="js/meetupAPIService.js"></script>
+<script src="lib/jquery.cookie.js"></script>
+<script src="lib/jquery.parseparam.js"></script>
+<script src="lib/underscore-min.js"></script>
+<script src="lib/parse-1.2.16.min.js"></script>
+<script src="js/spin.js"></script>
 <script src="js/html5il.js"></script>
 </body>
 </html>

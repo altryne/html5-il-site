@@ -1,590 +1,16 @@
 {
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
-  "creatorBuild" : "7978",
+  "creatorBuild" : "8248",
   "files" : {
-    "\/lib\/bootstrap-2.1.1\/css\/bootstrap-theme.min.css" : {
+    "\/lib\/jquery.parseparam.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/bootstrap-2.1.1\/css\/bootstrap-theme.min.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
-    "\/lib\/angular-1.0.3\/angular-resource.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-resource.js",
+      "inputAbbreviatedPath" : "\/lib\/jquery.parseparam.js",
       "outputStyle" : 0,
       "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-resource-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/angular-1.0.2\/angular.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/angular-1.0.2\/angular-sanitize.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-sanitize.min.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-sanitize.min-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/angular-1.0.3\/angular.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular.min.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular.min-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/bootstrap-2.1.1\/img\/glyphicons-halflings.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/bootstrap-2.1.1\/img\/glyphicons-halflings.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/lib\/bootstrap-2.1.1\/img\/glyphicons-halflings.png",
-      "initialSize" : 12799,
-      "fileType" : 8192
-    },
-    "\/lib\/angular-1.0.3\/angular-sanitize.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-sanitize.min.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-sanitize.min-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/jquery.cookie.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/jquery.cookie.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/jquery.cookie-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/jquery-2.0.0b1.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/jquery-2.0.0b1.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/jquery-2.0.0b1-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/angular-1.0.2\/angular-bootstrap.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-bootstrap.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-bootstrap-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/jquery.cookie-ck.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/jquery.cookie-ck.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/jquery.cookie-ck-ck.js",
-      "fileType" : 64
-    },
-    "\/partials\/welcome.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/partials\/welcome.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
-    "\/index.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/index.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
-    "\/js\/app.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/app.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/app-ck.js",
-      "fileType" : 64
-    },
-    "\/js\/html5il.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/html5il.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/html5il-ck.js",
-      "fileType" : 64
-    },
-    "\/partials\/starship.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/partials\/starship.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
-    "\/partials\/feedback.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/partials\/feedback.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
-    "\/js\/meetupAPIService.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/meetupAPIService.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/meetupAPIService-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/jquery-2.0.0b1-ck.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/jquery-2.0.0b1-ck.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/jquery-2.0.0b1-ck-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/angular-1.0.2\/angular.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular.min.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular.min-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/bootstrap-2.1.1\/css\/bootstrap-responsive.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/bootstrap-2.1.1\/css\/bootstrap-responsive.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
-    "\/img\/Voyager.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/Voyager.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/Voyager.jpg",
-      "initialSize" : 4226,
-      "fileType" : 4096
-    },
-    "\/lib\/angular-1.0.2\/angular-cookies.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-cookies.min.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-cookies.min-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/bootstrap-2.1.1\/css\/bootstrap-responsive.min.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/bootstrap-2.1.1\/css\/bootstrap-responsive.min.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
-    "\/lib\/angular-1.0.3\/angular-loader.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-loader.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-loader-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/angular-1.0.2\/angular-resource.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-resource.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-resource-ck.js",
-      "fileType" : 64
-    },
-    "\/img\/home.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/home.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/home.jpg",
-      "initialSize" : 7424,
-      "fileType" : 4096
-    },
-    "\/lib\/angular-1.0.2\/angular-loader.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-loader.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-loader-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/angular-1.0.3\/angular-bootstrap-prettify.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-bootstrap-prettify.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-bootstrap-prettify-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/angular-1.0.3\/jstd-scenario-adapter-config.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/jstd-scenario-adapter-config.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/jstd-scenario-adapter-config-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/underscore-min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/underscore-min.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/underscore-min-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/angular-1.0.3\/angular-scenario.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-scenario.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-scenario-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/bootstrap-2.1.1\/css\/bootstrap.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/bootstrap-2.1.1\/css\/bootstrap.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
-    "\/lib\/bootstrap-2.1.1\/css\/bootstrap.min.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/bootstrap-2.1.1\/css\/bootstrap.min.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
-    "\/lib\/angular-1.0.2\/jstd-scenario-adapter-config.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.2\/jstd-scenario-adapter-config.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.2\/jstd-scenario-adapter-config-ck.js",
-      "fileType" : 64
-    },
-    "\/partials\/join.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/partials\/join.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
-    "\/lib\/angular-1.0.3\/jstd-scenario-adapter.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/jstd-scenario-adapter.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/jstd-scenario-adapter-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/angular-1.0.3\/angular-bootstrap.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-bootstrap.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-bootstrap-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/angular-1.0.2\/angular-bootstrap-prettify.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-bootstrap-prettify.min.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-bootstrap-prettify.min-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/angular-1.0.2\/jstd-scenario-adapter.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.2\/jstd-scenario-adapter.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.2\/jstd-scenario-adapter-ck.js",
-      "fileType" : 64
-    },
-    "\/js\/html5il-ck.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/html5il-ck.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/html5il-ck-ck.js",
-      "fileType" : 64
-    },
-    "\/img\/glyphicons-halflings-white.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/glyphicons-halflings-white.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/glyphicons-halflings-white.png",
-      "initialSize" : 8777,
-      "fileType" : 8192
-    },
-    "\/lib\/bootstrap-2.1.1\/js\/bootstrap.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/bootstrap-2.1.1\/js\/bootstrap.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/bootstrap-2.1.1\/js\/bootstrap-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/bootstrap-2.1.1\/js\/bootstrap.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/bootstrap-2.1.1\/js\/bootstrap.min.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/bootstrap-2.1.1\/js\/bootstrap.min-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/angular-1.0.2\/angular-mocks.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-mocks.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-mocks-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/angular-1.0.3\/angular-loader.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-loader.min.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-loader.min-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/angular-1.0.3\/angular-sanitize.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-sanitize.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-sanitize-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/angular-1.0.3\/angular-bootstrap-prettify.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-bootstrap-prettify.min.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-bootstrap-prettify.min-ck.js",
-      "fileType" : 64
-    },
-    "\/img\/Enterprise-D.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/Enterprise-D.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/Enterprise-D.jpg",
-      "initialSize" : 11611,
-      "fileType" : 4096
-    },
-    "\/lib\/angular-1.0.2\/angular-resource.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-resource.min.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-resource.min-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/angular-1.0.2\/angular-scenario.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-scenario.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-scenario-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/angular-1.0.2\/angular-loader.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-loader.min.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-loader.min-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/angular-1.0.2\/angular-cookies.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-cookies.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-cookies-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/angular-1.0.3\/angular-resource.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-resource.min.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-resource.min-ck.js",
-      "fileType" : 64
-    },
-    "\/lib\/angular-1.0.3\/angular-cookies.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-cookies.min.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-cookies.min-ck.js",
+      "outputAbbreviatedPath" : "\/lib\/jquery.parseparam-ck.js",
       "fileType" : 64
     },
     "\/lib\/angular-1.0.3\/angular-cookies.js" : {
@@ -609,24 +35,97 @@
       "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-mocks-ck.js",
       "fileType" : 64
     },
-    "\/partials\/login.html" : {
+    "\/auth.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/partials\/login.html",
+      "inputAbbreviatedPath" : "\/auth.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/lib\/jquery.parseparam.js" : {
+    "\/js\/html5il.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/jquery.parseparam.js",
+      "inputAbbreviatedPath" : "\/js\/html5il.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/js\/html5il-ck.js",
+      "fileType" : 64
+    },
+    "\/partials\/feedback.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/partials\/feedback.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/lib\/angular-1.0.3\/angular-loader.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-loader.min.js",
       "outputStyle" : 0,
       "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/jquery.parseparam-ck.js",
+      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-loader.min-ck.js",
+      "fileType" : 64
+    },
+    "\/animate-custom.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/animate-custom.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
+    "\/lib\/bootstrap-2.1.1\/js\/bootstrap.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/bootstrap-2.1.1\/js\/bootstrap.js",
+      "outputStyle" : 0,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/lib\/bootstrap-2.1.1\/js\/bootstrap-ck.js",
+      "fileType" : 64
+    },
+    "\/js\/meetupAPIService.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/meetupAPIService.js",
+      "outputStyle" : 0,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/js\/meetupAPIService-ck.js",
+      "fileType" : 64
+    },
+    "\/lib\/angular-1.0.3\/angular-scenario.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-scenario.js",
+      "outputStyle" : 0,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-scenario-ck.js",
+      "fileType" : 64
+    },
+    "\/lib\/angular-1.0.3\/angular-sanitize.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-sanitize.js",
+      "outputStyle" : 0,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-sanitize-ck.js",
       "fileType" : 64
     },
     "\/lib\/angular-1.0.3\/angular.js" : {
@@ -640,6 +139,132 @@
       "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-ck.js",
       "fileType" : 64
     },
+    "\/lib\/jquery-2.0.0b1.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/jquery-2.0.0b1.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/lib\/jquery-2.0.0b1-ck.js",
+      "fileType" : 64
+    },
+    "\/lib\/bootstrap-2.1.1\/css\/bootstrap-responsive.min.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/bootstrap-2.1.1\/css\/bootstrap-responsive.min.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
+    "\/lib\/angular-1.0.3\/angular-loader.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-loader.js",
+      "outputStyle" : 0,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-loader-ck.js",
+      "fileType" : 64
+    },
+    "\/lib\/angular-1.0.3\/angular-sanitize.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-sanitize.min.js",
+      "outputStyle" : 0,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-sanitize.min-ck.js",
+      "fileType" : 64
+    },
+    "\/img\/glyphicons-halflings-white.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/glyphicons-halflings-white.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/glyphicons-halflings-white.png",
+      "initialSize" : 8777,
+      "fileType" : 8192
+    },
+    "\/lib\/angular-1.0.3\/jstd-scenario-adapter.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/jstd-scenario-adapter.js",
+      "outputStyle" : 0,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/jstd-scenario-adapter-ck.js",
+      "fileType" : 64
+    },
+    "\/lib\/bootstrap-2.1.1\/css\/bootstrap.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/bootstrap-2.1.1\/css\/bootstrap.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
+    "\/js\/html5il-ck.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/html5il-ck.js",
+      "outputStyle" : 0,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/js\/html5il-ck-ck.js",
+      "fileType" : 64
+    },
+    "\/lib\/bootstrap-2.1.1\/css\/bootstrap-theme.min.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/bootstrap-2.1.1\/css\/bootstrap-theme.min.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
+    "\/img\/glyphicons-halflings.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/glyphicons-halflings.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/glyphicons-halflings.png",
+      "initialSize" : 13826,
+      "fileType" : 8192
+    },
+    "\/lib\/bootstrap-2.1.1\/js\/bootstrap.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/bootstrap-2.1.1\/js\/bootstrap.min.js",
+      "outputStyle" : 0,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/lib\/bootstrap-2.1.1\/js\/bootstrap.min-ck.js",
+      "fileType" : 64
+    },
+    "\/lib\/jquery.cookie.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/jquery.cookie.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/lib\/jquery.cookie-ck.js",
+      "fileType" : 64
+    },
     "\/lib\/angular-1.0.3\/angular-bootstrap.min.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -651,15 +276,15 @@
       "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-bootstrap.min-ck.js",
       "fileType" : 64
     },
-    "\/lib\/angular-1.0.2\/angular-bootstrap.min.js" : {
+    "\/lib\/angular-1.0.3\/jstd-scenario-adapter-config.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-bootstrap.min.js",
+      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/jstd-scenario-adapter-config.js",
       "outputStyle" : 0,
       "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-bootstrap.min-ck.js",
+      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/jstd-scenario-adapter-config-ck.js",
       "fileType" : 64
     },
     "\/lib\/bootstrap-2.1.1\/img\/glyphicons-halflings-white.png" : {
@@ -673,47 +298,116 @@
       "initialSize" : 8777,
       "fileType" : 8192
     },
-    "\/lib\/angular-1.0.2\/angular-sanitize.js" : {
+    "\/partials\/welcome.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-sanitize.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-sanitize-ck.js",
-      "fileType" : 64
-    },
-    "\/auth.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/auth.html",
+      "inputAbbreviatedPath" : "\/partials\/welcome.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/lib\/angular-1.0.2\/angular-bootstrap-prettify.js" : {
+    "\/partials\/login.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-bootstrap-prettify.js",
+      "inputAbbreviatedPath" : "\/partials\/login.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/lib\/angular-1.0.3\/angular-resource.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-resource.js",
       "outputStyle" : 0,
       "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/lib\/angular-1.0.2\/angular-bootstrap-prettify-ck.js",
+      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-resource-ck.js",
       "fileType" : 64
     },
-    "\/img\/glyphicons-halflings.png" : {
+    "\/index.html" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/index.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/lib\/angular-1.0.3\/angular-resource.min.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/glyphicons-halflings.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/glyphicons-halflings.png",
-      "initialSize" : 13826,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-resource.min.js",
+      "outputStyle" : 0,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-resource.min-ck.js",
+      "fileType" : 64
+    },
+    "\/lib\/bootstrap-2.1.1\/css\/bootstrap.min.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/bootstrap-2.1.1\/css\/bootstrap.min.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
+    "\/lib\/angular-1.0.3\/angular.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular.min.js",
+      "outputStyle" : 0,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular.min-ck.js",
+      "fileType" : 64
+    },
+    "\/lib\/angular-1.0.3\/angular-cookies.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-cookies.min.js",
+      "outputStyle" : 0,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-cookies.min-ck.js",
+      "fileType" : 64
+    },
+    "\/lib\/underscore-min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/underscore-min.js",
+      "outputStyle" : 0,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/lib\/underscore-min-ck.js",
+      "fileType" : 64
+    },
+    "\/lib\/bootstrap-2.1.1\/css\/bootstrap-responsive.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/bootstrap-2.1.1\/css\/bootstrap-responsive.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
+    "\/lib\/angular-1.0.3\/angular-bootstrap.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-bootstrap.js",
+      "outputStyle" : 0,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-bootstrap-ck.js",
+      "fileType" : 64
     },
     "\/deauth.html" : {
       "ignoreWasSetByUser" : 0,
@@ -723,6 +417,48 @@
       "inputAbbreviatedPath" : "\/deauth.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
+    },
+    "\/partials\/join.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/partials\/join.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/lib\/angular-1.0.3\/angular-bootstrap-prettify.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-bootstrap-prettify.min.js",
+      "outputStyle" : 0,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-bootstrap-prettify.min-ck.js",
+      "fileType" : 64
+    },
+    "\/lib\/bootstrap-2.1.1\/img\/glyphicons-halflings.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/bootstrap-2.1.1\/img\/glyphicons-halflings.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/lib\/bootstrap-2.1.1\/img\/glyphicons-halflings.png",
+      "initialSize" : 12799,
+      "fileType" : 8192
+    },
+    "\/lib\/angular-1.0.3\/angular-bootstrap-prettify.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-bootstrap-prettify.js",
+      "outputStyle" : 0,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/lib\/angular-1.0.3\/angular-bootstrap-prettify-ck.js",
+      "fileType" : 64
     }
   },
   "manualImportLinks" : [
@@ -730,6 +466,7 @@
   ],
   "projectSettings" : {
     "hamlNoEscapeInAttributes" : 0,
+    "kitAutoOutputPathStyle" : 0,
     "lessOutputStyle" : 0,
     "hamlAutoOutputPathReplace2" : "",
     "draggedImportConcatenationStyle" : 1,
@@ -761,6 +498,7 @@
     "hamlOutputStyle" : 0,
     "stylusAutoOutputPathRelativePath" : "..\/css",
     "jsCheckerIndent" : 4,
+    "kitAutoOutputPathRelativePath" : "",
     "lessAutoOutputPathReplace2" : "css",
     "jadeAutoOutputPathReplace2" : "",
     "shouldRunBless" : 0,
@@ -785,7 +523,10 @@
     "coffeeAutoOutputPathReplace1" : "",
     "hamlUseDoubleQuotes" : 0,
     "coffeeAutoOutputPathReplace2" : "",
+    "kitAutoOutputPathReplace1" : "",
     "uglifyReservedNamesString" : "",
+    "coffeeOutputStyle" : 0,
+    "slimAutoOutputPathRelativePath" : "",
     "jsHintFlags" : {
       "latedef" : 1,
       "newcap" : 1,
@@ -844,8 +585,6 @@
       "laxbreak" : 0,
       "plusplus" : 0
     },
-    "coffeeOutputStyle" : 0,
-    "slimAutoOutputPathRelativePath" : "",
     "jsLintFlags" : {
       "white" : 0,
       "bitwise" : 0,
@@ -871,7 +610,6 @@
       "confusion" : 0,
       "evil" : 0,
       "on" : 0,
-      "cap" : 0,
       "windows" : 0,
       "devel" : 0,
       "rhino" : 0,
@@ -896,6 +634,7 @@
     "slimAutoOutputPathReplace2" : "",
     "jadeCompileDebug" : 1,
     "slimRailsCompatible" : 0,
+    "kitAutoOutputPathReplace2" : "",
     "lessDebugStyle" : 0,
     "javascriptAutoOutputPathRelativePath" : "",
     "slimAutoOutputPathStyle" : 0

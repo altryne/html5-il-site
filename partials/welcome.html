@@ -8,8 +8,8 @@
 			<tr>
 				<td>Title</td>
 				<td>Date</td>
-				<td>RSVP</td>
-				<td>Feedback</td>
+				<!--<td>RSVP</td>-->
+				<td>CheckIns</td>
 			</tr>
 			</thead>
 			<tbody>
@@ -20,13 +20,10 @@
 						desc</a>)</span>
 				</td>
 				<td>{{meetup.time | date : 'MMM d, yyyy' }}</td>
-				<td ng-show="meetup.self.rsvp.response && meetup.self.rsvp.response != 'no'">{{meetup.self.rsvp.response}}</td>
-				<td ng-show="!meetup.self.rsvp.response || meetup.self.rsvp.response == 'no'">
-					<button ng-repeat="button in meetup.self.actions" ng-click="sendAction(button,meetup.id)">
-						{{enum[button]}}
-					</button>
-				</td>
-				<td><a class="btn btn-primary" ng-click="popup()">Leave feeback</a></td>
+                <td ng-show="(meetup.self.rsvp.response == 'yes')"><a class="btn btn-primary" href="#/checkin/{{ meetup.id }}">CheckIn</a></td>
+                <td ng-hide="(meetup.self.rsvp.response == 'yes')">Please RSVP to checkin!</td>
+                <td ng-show="isEventHost(meetup.event_hosts, user.id)"><a class="btn btn-primary" href="#/raffle/{{ meetup.id }}">See check-ins for this meetup</a></td>
+				<!--<td><a class="btn btn-primary" ng-click="popup()">Leave feeback</a></td>-->
 			</tr>
 			</tbody>
 		</table>
@@ -40,7 +37,8 @@
 			<tr>
 				<td>Title</td>
 				<td>Date</td>
-				<td>Feedback</td>
+				<td >Feedback</td>
+				<td ng-show="isEventHost(meetup.event_hosts, user.id)">Admin</td>
 			</tr>
 			</thead>
 			<tbody>
@@ -48,8 +46,12 @@
 				<td>{{meetup.name}} <span class="small">(<a class="full_desc" ng-click="showLongDesc(meetup.description)">full
 										desc</a>)</span></td>
 				<td>{{meetup.time | date : 'MMM d, yyyy' }}</td>
-				<td ng-show="(meetup.self.rsvp.response == 'yes')"><a class="btn btn-primary" ng-click="popup()">Leave
-					feeback</a></td>
+				<!--<td ng-show="(meetup.self.rsvp.response == 'yes')"><a class="btn btn-primary" ng-click="popup()">Leave-->
+					<!--feeback</a></td>-->
+                <td><a class="btn btn-primary" href="#/checkin/{{ meetup.id }}">CheckIn</a></td>
+                <td ng-show="isEventHost(meetup.event_hosts, user.id)"><a class="btn btn-primary"
+                                                                          href="#/raffle/{{ meetup.id }}">See check-ins
+                    for this meetup</a></td>
 			</tr>
 			</tbody>
 		</table>

@@ -31,6 +31,6 @@ angular.module('meetupAPIService',['ngResource']).
 			}
 
 		}
-
 		return new meetupAPIResource;
 	})
+

@@ -1,9 +1,9 @@
 var app = angular.module('html5il',['ngResource','meetupAPIService']);
 
 if(location.host == 'html5il.com'){
-	app.constant('APP_CONFIG',{production : true, key : '2vhfkjrdi9e2lashik72u7m54h','redir_url':'http://html5il.com'})
+	app.constant('APP_CONFIG',{production : true, key : '2vhfkjrdi9e2lashik72u7m54h','redir_url':'http://html5il.com/auth.html'})
 }else{
-	app.constant('APP_CONFIG',{production: false, key : 'hc9et1ihd9ec8eo843oqh11trc','redir_url':'http://html5il.org'})
+	app.constant('APP_CONFIG',{production: false, key : 'hc9et1ihd9ec8eo843oqh11trc','redir_url':'http://html5il.org/auth.html'})
 	mixpanel = {
 		track : function(name, obj){
 			console.log('mixpanel local event',name, obj);
@@ -20,22 +20,24 @@ if(location.host == 'html5il.com'){
 app.config(function($routeProvider,$locationProvider){
 //	$locationProvider.html5Mode(true);
 	$routeProvider.
-		when("/login",{templateUrl :"/partials/login.html",controller : 'LoginCtrl'}).
+		when("/login",{templateUrl :"partials/login.html",controller : 'LoginCtrl'}).
 		when("/welcome",{
-			templateUrl :"/partials/welcome.html",
+			templateUrl :"partials/welcome.html",
 			controller : 'WelcomeCtrl'
 			}).
-		when('/join_the_group',{templateUrl:"/partials/join.html",controller:"JoinCtrl"}).
-		when('/feedback/:first_name',{templateUrl:"/partials/feedback.html",controller : 'FeedbackCtrl'}).
+		when('/checkin/:meetup_id',{templateUrl:"partials/checkin.html",controller:"CheckInCtrl"}).
+		when('/raffle/:meetup_id',{templateUrl:"partials/raffle_meetup.html",controller:"RaffleCtrl"}).
+		when('/join_the_group',{templateUrl:"partials/join.html",controller:"JoinCtrl"}).
+		when('/feedback/:first_name',{templateUrl:"partials/feedback.html",controller : 'FeedbackCtrl'}).
 		otherwise('',{redirectTo : '/login'})
 })
 
 
 var token;
 var env_settings = (window.location.host == 'html5il.com')?
-		{key : '2vhfkjrdi9e2lashik72u7m54h','redir_url':'http://html5il.com'}
+		{key : '2vhfkjrdi9e2lashik72u7m54h','redir_url':'http://html5il.com/auth.html'}
 		:
-		{key : 'hc9et1ihd9ec8eo843oqh11trc','redir_url':'http://html5il.org'};
+		{key : 'hc9et1ihd9ec8eo843oqh11trc','redir_url':'http://html5il.org/auth.html'};
 
 var AppCtrl = function ($scope,$location) {
 	$scope.authStatus = false;
@@ -44,6 +46,10 @@ var AppCtrl = function ($scope,$location) {
 		checkAuthorizedMode($location);
 	}
 	$scope.checkAuthWithLocation();
+
+    var app_id = "u3ptCpPx22tER70ATJNrL13s9CmoMZOvk4z0DO79";
+    var js_key = "SOpkekLuUQRfHpHIrPBDJqC5IH6eX8xMj6VyHYnb";
+    Parse.initialize(app_id, js_key);
 }
 var LoginCtrl = function ($scope,APP_CONFIG) {
 	$scope.authorize = function(){
@@ -80,7 +86,7 @@ var WelcomeCtrl = function ($scope,$rootScope,meetupAPIResource,$location,APP_CO
 		"page":"2",
 		"order":"time",
 		"desc":"false",
-		"fields":"self,survey_questions"
+		"fields":"self,survey_questions,event_hosts"
 	}
 
 	if(!APP_CONFIG.production){
@@ -90,11 +96,11 @@ var WelcomeCtrl = function ($scope,$rootScope,meetupAPIResource,$location,APP_CO
 		//filter the actions to the only we want, 'rsvp' and 'wait'
 		_.each(result,function(obj){obj.self.actions = _.intersection(obj.self.actions,['rsvp','wait'])})
 		$scope.future_events = result;
+
 	},true);
 
 	var future_events_obj = $.extend(events_obj,{"status":"past","rsvp":"yes","page":"5","desc":"true"});
 	meetupAPIResource.getData('events',future_events_obj, function(result){
-		console.log(result);
 		$scope.events = result;
 	},true);
 
@@ -134,6 +140,10 @@ var WelcomeCtrl = function ($scope,$rootScope,meetupAPIResource,$location,APP_CO
 				})
 	}
 
+    $scope.isEventHost = function(event_hosts, member_id){
+        hosts_ids = _.pluck(event_hosts, 'member_id')
+        return _.contains(hosts_ids, member_id);
+    }
 
 	$scope.long_desc = false;
 	$scope.showLongDesc = function(description){
@@ -148,6 +158,129 @@ var WelcomeCtrl = function ($scope,$rootScope,meetupAPIResource,$location,APP_CO
 			},1100)
 		})
 	}
+}
+
+var RaffleCtrl = function($scope, $http, meetupAPIResource, $location, $routeParams, $rootScope){
+    $scope.number_of_prizes = 0;
+    $scope.meetup_id = $routeParams.meetup_id;
+
+    $scope.loaded = false;
+
+    var CheckIn = Parse.Object.extend("CheckIn");
+    var query = new Parse.Query(CheckIn);
+
+    query.equalTo("event_id", $routeParams.meetup_id);
+
+    query.find({
+        success: function (results) {
+            _.each(results, function (obj) {
+                obj.attributes.color = 'color:' + $scope.generatePastel() +';';
+            })
+            $scope.$apply(function () {
+                if (results.length) {
+                    $scope.loaded = true;
+                    $scope.checkins = results;
+                } else {
+                    $scope.loaded = true;
+                    $scope.checkIn();
+                }
+            });
+        },
+        error: function (error) {
+
+        }
+    });
+
+    $scope.generatePastel = function(){
+        var r = (Math.round(Math.random() * 100) + 127).toString(16);
+        var g = (Math.round(Math.random() * 100) + 127).toString(16);
+        var b = (Math.round(Math.random() * 100) + 127).toString(16);
+        return '#' + r + g + b;
+    }
+
+    $scope.prepare_raffle = function(name_of_prize){
+        $scope.show_raffle = true;
+
+    }
+
+
+    $scope.getCheckinsByPage = function(pagenum){
+        if (!$scope.checkins.length) return []
+        before_arr = $scope.checkins.slice(0);
+        num = Math.floor(before_arr.length / parseInt($scope.number_of_prizes))
+        arr = $scope.paginate(before_arr, num)
+        return arr[pagenum]
+    }
+
+    $scope.action = function(){
+        sm.action()
+    }
+    $scope.paginate = function(arr, size){
+        var pages = [];
+        size = size || this.length;
+
+        while (arr.length) {
+            pages.push(arr.splice(0, size));
+        }
+        return pages;
+    }
+
+    $scope.getNumberOfPrizes = function () {
+        num = parseInt($scope.number_of_prizes) || 0;
+        return _.range(num)
+    }
+}
+
+var CheckInCtrl = function($scope, $http, meetupAPIResource, $location, $routeParams, $rootScope){
+    $scope.loaded = false;
+
+    var CheckIn = Parse.Object.extend("CheckIn");
+    var query = new Parse.Query(CheckIn);
+
+    query.equalTo("user_id", $rootScope.user.id);
+    query.equalTo("event_id", $routeParams.meetup_id);
+
+    query.find({
+        success: function (results) {
+
+            $scope.$apply(function () {
+                if (results.length) {
+                    $scope.loaded = true;
+                    $scope.checked_in = true;
+                }else{
+                    $scope.loaded = true;
+                    $scope.checkIn();
+                }
+            });
+        },
+        error: function (error) {
+
+        }
+    });
+
+   $scope.checkIn = function(){
+       var checkin = new CheckIn();
+
+       checkin.set('user_id', $rootScope.user.id)
+       checkin.set('user_name', $rootScope.user.name)
+       checkin.set('event_id', $routeParams.meetup_id)
+
+       checkin.save(null, {
+           success: function (checkin) {
+               $scope.$apply(function () {
+                   $scope.checked_in = true;
+               });
+           },
+           error: function (gameScore, error) {
+               $scope.$apply(function () {
+                   $scope.checked_in = false;
+               });
+           }
+       });
+   }
+
+
+
 }
 
 var JoinCtrl = function ($scope, $http, meetupAPIResource,$location) {
