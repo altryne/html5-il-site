@@ -1,7 +1,7 @@
 var app = angular.module('html5il',['ngResource','meetupAPIService']);
 
 if(location.host == 'html5il.com'){
-	app.constant('APP_CONFIG',{production : true, key : '2vhfkjrdi9e2lashik72u7m54h','redir_url':'http://html5il.com/auth.html'})
+	app.constant('APP_CONFIG',{production : true, key : '2vhfkjrdi9e2lashik72u7m54h','redir_url':'http://html5il.com/raffle/auth.html'})
 
 }else{
 	app.constant('APP_CONFIG',{production: false, key : 'hc9et1ihd9ec8eo843oqh11trc','redir_url':'http://html5il.org/auth.html'})
@@ -25,7 +25,7 @@ app.config(function($routeProvider,$locationProvider){
 
 var token;
 var env_settings = (window.location.host == 'html5il.com')?
-		{key : '2vhfkjrdi9e2lashik72u7m54h','redir_url':'http://html5il.com/auth.html'}
+		{key : '2vhfkjrdi9e2lashik72u7m54h','redir_url':'http://html5il.com/raffle/auth.html'}
 		:
 		{key : 'hc9et1ihd9ec8eo843oqh11trc','redir_url':'http://html5il.org/auth.html'};
 
