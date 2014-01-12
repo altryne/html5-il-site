@@ -84,7 +84,35 @@ var sm = (function (undefined) {
     }
 
     function check() {
+        winners = []
+        $('#sm .reel').each(function(){
+            // num = ($(this).scrollTop() + 120) / 6;
+            num = ($(this).scrollTop() + 60) / 60
+            winner = $(this).find('p').eq(num).text();
+            winners.push({
+                name : $(this).find('p').eq(num).text(),
+                id: $(this).find('p').eq(num).data('id')
+            })
+        })
+        
+        var Raffle = Parse.Object.extend("Raffle");
+        raffle = new Raffle()
+        raffle.set('winners', winners)
+        currentdate = new Date();
+        var datetime =  currentdate.getDate() + "/"+(currentdate.getMonth()+1) 
+    + "/" + currentdate.getFullYear() + " @ " 
+    + currentdate.getHours() + ":" 
+    + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+        raffle.set('time', datetime)
 
+        raffle.save(null, {
+           success: function (raffle) {
+              alert('Congratilations to all the winners') 
+           },
+           error: function (gameScore, error) {
+              
+           }
+       });
     }
 
     return {init: init,animate: animate, action: action}

@@ -14,10 +14,10 @@
             <div class="group">
                 <div class="reel" ng-repeat="reel in getNumberOfPrizes()">
                     <div>
-                        <p ng-repeat="checkin in getCheckinsByPage(reel)" style="{{checkin.attributes.color}}"> {{ checkin.attributes.user_name }}</p>
+                        <p ng-repeat="checkin in getCheckinsByPage(reel)" style="{{checkin.attributes.color}}" data-id="{{checkin.attributes.user_id}}"> {{ checkin.attributes.user_name }}</p>
                     </div>
                     <div>
-                        <p ng-repeat="checkin in getCheckinsByPage(reel)" style="{{checkin.attributes.color}}"> {{ checkin.attributes.user_name }}</p>
+                        <p ng-repeat="checkin in getCheckinsByPage(reel)" style="{{checkin.attributes.color}}" data-id="{{checkin.attributes.user_id}}"> {{ checkin.attributes.user_name }}</p>
                     </div>
                 </div>
             </div>

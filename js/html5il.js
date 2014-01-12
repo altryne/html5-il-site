@@ -238,6 +238,7 @@ var CheckInCtrl = function($scope, $http, meetupAPIResource, $location, $routePa
                 if (results.length) {
                     $scope.loaded = true;
                     $scope.checked_in = true;
+                    $.getScript('//platform.twitter.com/widgets.js');
                 }else{
                     $scope.loaded = true;
                     $scope.checkIn();
