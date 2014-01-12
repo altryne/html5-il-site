@@ -48,7 +48,8 @@ var LoginCtrl = function ($scope,APP_CONFIG) {
 					   '?client_id=' +APP_CONFIG.key +
 					   '&response_type=token'+
 					   '&redirect_uri='+APP_CONFIG.redir_url;
-					win = new_win(auth_url,'auth_window',400,380);
+            window.location = auth_url;
+//            win = new_win(auth_url,'auth_window',400,380);
 		}
 }
 var WelcomeCtrl = function ($scope,$rootScope,meetupAPIResource,$location,APP_CONFIG,$http) {

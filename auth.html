@@ -6,12 +6,42 @@
 </head>
 <body>
 
+<script src="lib/jquery-2.0.0b1.js"></script>
+<script src="lib/jquery.parseparam.js"></script>
+<script src="lib/jquery.cookie.js"></script>
 <script>
-    hash = window.location.hash.substr(1);
-    if(hash.split('access_token').length){
-        console.log('success!');
-		window.opener.auth(hash);
+
+
+    window.auth = function(hash){
+        parsed_hash = $.parseParams(hash);
+        setToken(parsed_hash.access_token, parsed_hash.expires_in);
+
+        window.setTimeout(function(){
+            if (location.host == 'html5il.com') {
+                window.location = 'http://html5il.com/raffle/'
+            } else {
+                window.location = 'http://html5il.org/'
+            }
+        },500)
     }
+    /*
+     set the token inside cookie
+     */
+    setToken = function (t, expires) {
+        token = t;
+        //set the cookie if expires is passed
+        if (expires) {
+            var currentDate = new Date();
+            currentDate.setHours(currentDate.getHours() + expires / 60 / 60);
+            $.cookie('auth', t, { expires: currentDate, path: '/' });
+        }
+    }
+    $(function(){
+        hash = window.location.hash.substr(1);
+        if (hash.split('access_token').length) {
+            auth(hash);
+        }
+    })
 </script>
 </body>
 </html>
